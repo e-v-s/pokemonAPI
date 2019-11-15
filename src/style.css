@@ -1,0 +1,195 @@
+body {
+    background-image: url(https://images4.alphacoders.com/574/thumb-1920-574726.jpg);
+    background-attachment: fixed;
+    }
+    
+    .img-header {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 20px;
+    }
+    
+    main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 50px;
+    margin: 50px;
+    
+    }
+    
+    .card {
+    width: 250px;
+    height: 400px;
+    border-radius: 5%;
+    margin-top: 50px;
+    margin-right: 30px; 
+    padding-left: 20px;
+    background-color: #ffffff;
+    }
+    
+    .image {
+    flex-basis: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10%;
+    }
+    
+    .nameOf {
+    font-family: 'Muli', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 1px
+    }
+    
+    .info {
+    border-radius: 5%;
+    margin-top: 1px;
+    width: 220px;
+    height: 150px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-inline-end: 2px;
+    border-radius: 5%;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    color: #000;
+    margin-top: 0%;
+    }
+
+    nav{
+        border: 1px solid #ffea00;
+        padding-top: 0px;    
+        margin-top: 20px;
+        height: 49px;
+        width: 100%;
+        background-color: #ffd500;
+    }
+
+    #result{
+
+        font-family: 'Muli', sans-serif;
+        font-size: 20px;
+        color: #050505;
+        text-align: center;
+
+    }
+
+    select {
+        margin-top: 0px;
+        font-family: 'Muli', sans-serif;
+        font-size: 20px;
+        color: #050505;
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #ffd500;
+        border: 1px solid #ffea00;
+        
+    }
+
+    option {
+
+        font-family: 'Muli', sans-serif;
+        font-size: 20px;
+        color: #050505;
+        text-align: center;
+        padding: 10px 20px;
+        background-color: #ffd500;
+        border: 1px solid #ffea00;
+    }
+
+    #btn-search {
+        color: #050505;
+        font-family: 'Muli', sans-serif;
+        font-size: 20px;
+        background-color: #ffd500;
+        border: 1px solid #ffea00;
+    }
+    
+    #searchtxt {
+        font-family: 'Muli', sans-serif;
+        font-size: 20px;
+        color: #050505;
+        text-align: center;
+        margin-left: 200px;
+        padding: 10px 20px;
+        background-color: #cfb72f;
+        border: 1px solid #ffea00;
+    }
+
+    .cardFire {
+        background-color: #FF0000;    
+    }
+    .cardFlying {
+        background-color: #4169E1;
+    }
+
+    .cardGrass {
+        background-color: #32CD32;
+    }
+
+    .cardBug {
+        background-color: #008000;
+    }
+
+    .cardNormal {
+        background-color: #808080;
+    }
+
+    .cardElectric {
+        background-color: #FFD700;
+    }
+
+    .cardPsychic {
+        background-color: #DB7093;
+    }
+
+    .cardPsychic {   
+        background-color: #FF1493;
+    }
+
+    .cardFighting {
+        background-color: #ff681f;
+    }
+
+    .cardRock {
+        background-color: #CD853F;
+    }
+
+    .cardGround {
+        background-color: #DAA520;
+    }
+
+    .cardBug {
+        background-color: #3CB371;
+    }
+
+    .cardPoison {
+        background-color: #8B008B;
+    }
+
+    .cardGhost {
+        background-color: #0000FF;
+    }
+
+    .cardIce {
+        background-color: #00BFFF;
+
+    }
+
+    .cardDragon {
+        background-color: #BA55D3;
+
+    }
+
+    .cardWater {
+        background-color: #1E90FF;
+    }
+
