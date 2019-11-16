@@ -1,23 +1,15 @@
+
 function filterData(data, condition) {
-
-  for (let i of data) {
-    console.log(data)
-  }
-
-  // data.map(abi => {
-  //   if (abi.ability.name.includes(condition)) {
-  //     return data
-  //   }
-  // })
-  // data.abilities.map(type => {
-  //   if (type.ability.name === condition) {
-  //     return data
-  //   }
-  // })
-  //return data.filter(item => item.data.types.includes(condition));
+  data.forEach(pokemonInfo => fetch(pokemonInfo.url)
+    .then(response => response.json())
+    .then(data => {
+      data.types.map(type => {
+        if (type.type.name === condition) {
+          window.template(data)
+        }
+      })
+  }))
 }
-
-
 
 function filterName(data, condition) {
   return data.filter(item => item.name.includes(condition.charAt(0).toUpperCase() + condition.slice(1)));

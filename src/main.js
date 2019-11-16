@@ -36,41 +36,44 @@ btnType.addEventListener("change", () => {
   .then(response => response.json())
   .then((data) => {
     const pokemonDataArray = data.results;
-    pokemonDataArray.forEach( (pokemonInfo) => fetch(pokemonInfo.url)
-      .then(response => response.json())
-      .then( (data) => {
-        main.innerHTML = "";
-        const pokemonData = data;
-        template(window.app.filterData(pokemonData, btnType.value));
-
-        // calc.innerHTML = `There are ${window.app.computers(window.app.filterData(pokemonData, btnType.value))}% ${btnType.value} type among 151 pokemons.`;
-       }
-      )
-    )
+    main.innerHTML = "";
+    main.innerHTML += window.app.filterData(pokemonDataArray, btnType.value);
+    // pokemonDataArray.forEach( (pokemonInfo) => fetch(pokemonInfo.url)
+    //   .then(response => response.json())
+    //   .then( (data) => {
+    //     main.innerHTML = "";
+    //     const pokemonData = data;
+    //     // calc.innerHTML = `There are ${window.app.computers(window.app.filterData(pokemonData, btnType.value))}% ${btnType.value} type among 151 pokemons.`;
+    //     //template(window.app.filterData(pokemonData, btnType.value));
+    //    }
+    //   )
+    // )
   }
 )
 })
 
 const urlApi = fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151');
 
-urlApi.then(response => response.json())
-  .then((data) => {
-    const pokemonDataArray = data.results;
-    pokemonDataArray.forEach( (pokemonInfo) => fetch(pokemonInfo.url)
-      .then(response => response.json())
-      .then( (data) => {
-        const pokemonData = data;
-        const pokemonImage = data.sprites.front_default;
-        const pokemonPokedex = data.id;
-        const pokemonName = data.name;
-        const pokemonType = data.types.map(type=>type.type.name);
-        //template(pokemonImage, pokemonName, pokemonPokedex, pokemonType);
-        template(pokemonData);
-        }
+const fetchedData = (urlApi) => {
+  urlApi.then(response => response.json())
+    .then((data) => {
+      const pokemonDataArray = data.results;
+      pokemonDataArray.forEach( (pokemonInfo) => fetch(pokemonInfo.url)
+        .then(response => response.json())
+        .then( (data) => {
+          const pokemonData = data;
+          const pokemonImage = data.sprites.front_default;
+          const pokemonPokedex = data.id;
+          const pokemonName = data.name;
+          const pokemonType = data.types.map(type=>type.type.name);
+          //template(pokemonImage, pokemonName, pokemonPokedex, pokemonType);
+          template(pokemonData);
+          }
+        )
       )
-    )
-  }
-)  
+    }
+  )
+}
 
 const menuTypes = () => {
     let opt = "";
@@ -91,6 +94,7 @@ const menuTypes = () => {
 
 window.onload = () => {
   menuTypes();
+  fetchedData(urlApi);
 };
 
 function template(data) {
@@ -108,3 +112,4 @@ function template(data) {
   main.innerHTML += template;
 }
 
+window.template = template;
